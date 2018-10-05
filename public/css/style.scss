@@ -1,0 +1,172 @@
+@import "mixin.scss";
+
+body{
+  font-size: 13px;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #707478;
+  text-align: left  ;
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    .panel-title {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .panel_heading {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 30px;
+      label {
+        margin-right: 50px;
+        margin-left: 50px;
+        select {
+          margin-left: 12px;
+          padding: 5px 10px;
+          border: 1px solid #ccd0d4;
+          border-radius: 4px;
+          box-shadow: none;
+          height: 30px;
+          line-height: 30px;
+        }
+      }
+    }
+    .table1 {
+      box-shadow: 0px 2px 12px 1px rgba(0, 0, 0, 0.15);
+      background: #fff;
+      width: 100%;
+      thead {
+        tr {
+          th {
+            border-top: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            color: #242a30;
+            padding: 10px 15px;
+            background: #fff;
+            position: relative;
+            i {
+              font-size: 15px;
+              cursor: pointer;
+              position: absolute;
+              right: 15px;
+              top: 12px;
+            }
+          }
+        }
+        tr th:first-child {
+          width: 52px;
+          border-left: 1px solid #ddd;
+          border-top-left-radius: 4px;
+        }
+        tr th:last-child {
+          border-top-right-radius: 4px;
+        }
+      }
+      tbody {
+        tr {
+          border-left: 1px solid #ddd;
+          .icon {
+            cursor: pointer;
+            display: block;
+            width: 20px;
+            height: 20px;
+          }
+          .icon_open {
+            background: url("../img/details_open.png");
+          }
+          .icon_close {
+            background: url("../img/details_close.png");
+
+          }
+          td {
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            color: #707478;
+            padding: 10px 15px;
+            background: #fff;
+          }
+        }
+        tr:nth-child(odd) {
+          td {
+            background: #f0f3f5;}
+          .new_table {
+            .new_table2 {
+              tbody {
+                tr {
+                  td {
+                    background: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        tr:nth-child(even) {
+          .new_table {
+            .new_table2 {
+              tbody {
+                tr {
+                  td {
+                    background: #f0f3f5;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
+        tr td:first-child {
+          border-left: 1px solid #ddd;
+          width: 40px;
+        }
+        tr:last-child td:first-child {
+          border-bottom-left-radius: 4px;
+        }
+        tr:last-child td:last-child {
+          border-bottom-right-radius: 4px;
+        }
+        .new_table {
+          padding-right: 25px;
+          padding-left: 25px;
+          .new_table2 {
+            width: 100%;
+            tbody {
+              tr:first-child td {
+                border-top: 1px solid #ddd;
+              }
+              tr:first-child td:first-child {
+                border-top-left-radius: 4px;
+              }
+              tr:first-child td:last-child {
+                border-top-right-radius: 4px;
+              }
+              tr {
+                td {
+                  width: 16.666%;
+                }
+              }
+            }
+          }
+          h3 {
+            padding-left: 5px;
+            font-weight: bold;
+            color: #242a30;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+          }
+          .new_table3 {
+            margin-bottom: 12px;
+          }
+
+        }
+      }
+    }
+  }
+}
+
