@@ -1,11 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux';
 import {TableReduceer} from "./Component/Redux/Table-reducers";
 import {creat_TableAction} from "./Component/Redux/Table-Actions";
 import Tbody from "./Component/Thoby";
 import Thead from "./Component/Thead";
 import CreateLabel from "./Component/CreateLebel";
+import App from "./Component/App";
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+import logger from 'redux-logger';
+import {Provider} from 'react-redux';
+import {createStore,applyMiddleware} from 'redux';
+import createSagaMiddleware from 'redux-saga'
+import saga from './saga';
+
+import reducer from './reducer'
+
+
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(reducer,composeWithDevTools(applyMiddleware(sagaMiddleware,logger)));
+sagaMiddleware.run(saga) //
+
+window.store = store;
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementsByClassName('container')[1]
+);
+
+
+
+
+
+
+
+
 
 class Table extends React.Component{
     constructor(props) {
@@ -177,8 +208,7 @@ class Table extends React.Component{
                     <CreateLabel name="Mass" list={['all','50','50 - 100','100 - 150','150 >']}
                                   store={this.store}/>
                 </div>
-                <div
-                    className="table1_wrapper">
+                <div className="table1_wrapper">
                     <table className="table1">
                         <Thead arrows_mass={arrows_mass}
                                arrows_name={arrows_name}
