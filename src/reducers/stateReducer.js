@@ -1,10 +1,10 @@
-import oldState from "../stubs/oldState";
+import initialState from "../stubs/initialState";
 
 
 
 
 
-export default function stateReducer(state = oldState,action) {
+export default function stateReducer(state = initialState,action) {
     switch (action.type) {
         case 'LOADING_PENDING' : {
             return {
@@ -145,6 +145,7 @@ export default function stateReducer(state = oldState,action) {
     }
 }
 
+
 export function getRepos(dataName) {
     return{ payload:dataName,type: 'LOADING'};
 }
@@ -160,11 +161,11 @@ export function setArrows(arrowId,arrowClass){
 export function getNewTable( isOpen,results,index,homeworld,species,vehicles){
     return{
         payload:isOpen,
-        results:results,
-        homeworld:homeworld,
-        species:species,
-        vehicles:vehicles,
-        index:index,
+        results,
+        homeworld,
+        species,
+        vehicles,
+        index,
         type: 'NEWTABLE'};
 }
 

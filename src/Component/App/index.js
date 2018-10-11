@@ -1,13 +1,13 @@
-import {compose,lifecycle,} from 'recompose';
+import {compose, lifecycle, withHandlers, withState,} from 'recompose';
 import { connect } from 'react-redux';
 import App from './App';
-import {getNewTable, getRepos, setArrows, setSelected} from "../../reducer/stateReducer";
+import {getNewTable, getRepos, setArrows, setSelected} from "../../reducers/stateReducer";
 
 
 
 export default compose(
-    connect(({oldState}) => (
-            {oldState}
+    connect(({initialState}) => (
+            {initialState}
         ),
         {
             getRepos,
@@ -20,4 +20,16 @@ export default compose(
             this.props.getRepos('results');
         }
     }),
+    // withState('dataTable', 'setDataState', props => {
+    //     const {initialState} = props;
+    //     console.log('55555',props.initialState.results)
+    //     const dataTablee = props.initialState.results;
+    //      if(initialState.arrowName === "fa fa-arrow-down"){
+    //        props.setDataState(  dataTablee.reverse());
+    //        } else {
+    //           return   props.initialState.results;
+    //           console.log('6666',dataTablee)
+    //      }
+    //
+    //  }),
 )(App);

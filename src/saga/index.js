@@ -1,4 +1,4 @@
-import {takeLatest, all, takeEvery, select, put, race} from 'redux-saga/effects';
+import {takeLatest, all} from 'redux-saga/effects';
 import {getData, getDataTable} from "../api";
 import {makeSagaRequest, ArrowSagaRequest, SelectedSagaRequest, NewTableSagaRequest} from "../helpers/makeSagaRequest";
 

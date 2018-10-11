@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom'
 import {TableReduceer} from "./Component/Redux/Table-reducers";
 import {creat_TableAction} from "./Component/Redux/Table-Actions";
 import Tbody from "./Component/Thoby";
@@ -14,7 +14,11 @@ import {createStore,applyMiddleware} from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import saga from './saga';
 
-import reducer from './reducer'
+import reducer from './reducers'
+
+
+
+
 
 
 const sagaMiddleware = createSagaMiddleware()
@@ -23,7 +27,7 @@ sagaMiddleware.run(saga) //
 
 window.store = store;
 
-ReactDOM.render(
+render(
     <Provider store={store}>
         <App />
     </Provider>,
@@ -224,4 +228,4 @@ class Table extends React.Component{
     )
     }
 }
-ReactDOM.render(<Table />, document.getElementsByClassName('container')[0]);
+render(<Table />, document.getElementsByClassName('container')[0]);

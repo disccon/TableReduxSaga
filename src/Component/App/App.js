@@ -3,34 +3,31 @@ import PropTypes from 'prop-types';
 import TitleSelect from "../TitleSelect";
 import HeaderTable from "../HeaderTable";
 import ContentTable from "../ContentTable";
-import uuid from 'uuid/v4';
-
 
 
 
 const App = ({
-                 oldState,
+                 initialState,
                  setSelected,
-                 chooseOption1,
                  setArrows,
                  getNewTable,
              }) =>(
-        <div onClick={chooseOption1}>
+        <div >
             <div className="panel-title">Tables Redux</div>
                 <div className="panel_heading">
                     <TitleSelect
                         name="Gender"
-                        list={oldState.gender}
+                        list={initialState.gender}
                         setSelectedActive={setSelected}
                         />
                     <TitleSelect
                         name="Hair Color"
-                        list={oldState.hairСolor}
+                        list={initialState.hairСolor}
                         setSelectedActive={setSelected}
                                  />
                     <TitleSelect
                         name="Mass"
-                        list={oldState.mass}
+                        list={initialState.mass}
                         setSelectedActive={setSelected}
                                 />
                 </div>
@@ -38,13 +35,13 @@ const App = ({
                     <table className="table1" >
                         <HeaderTable
                             onclickSetArrows={setArrows}
-                            arrowName={oldState.arrowName}
-                            arrowHeight={oldState.arrowHeight}
-                            arrowMass={oldState.arrowMass}
-                            arrowBirthYear={oldState.arrowBirthYear}
+                            arrowName={initialState.arrowName}
+                            arrowHeight={initialState.arrowHeight}
+                            arrowMass={initialState.arrowMass}
+                            arrowBirthYear={initialState.arrowBirthYear}
                         />
                         <ContentTable
-                            results={oldState.results}
+                            results={initialState.results}
                             onClickclGetNewTable={getNewTable}
                         />
                     </table>
@@ -53,6 +50,9 @@ const App = ({
    )
 App.propTypes = {
     oldState: PropTypes.object,
+    setSelected: PropTypes.func,
+    setArrows: PropTypes.func,
+    getNewTable: PropTypes.func,
 };
 
 App.defaultProps = {

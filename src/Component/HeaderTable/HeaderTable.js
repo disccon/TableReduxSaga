@@ -46,6 +46,7 @@ HeaderTable.propTypes = {
     arrowHeight: PropTypes.string.isRequired,
     arrowMass: PropTypes.string.isRequired,
     arrowBirthYear: PropTypes.string.isRequired,
+    onclickArrows: PropTypes.func,
 };
 
 HeaderTable.defaultProps = {

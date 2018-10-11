@@ -1,4 +1,4 @@
-import {compose, withHandlers, withState} from 'recompose';
+import {compose, withHandlers} from 'recompose';
 import TitleSelect from './TitleSelect';
 
 
