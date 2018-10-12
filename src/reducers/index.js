@@ -1,9 +1,10 @@
 import {combineReducers} from 'redux';
 import initialState from "./stateReducer";
-import visibilityFilter from "./visibilityFilter";
-
+import visibilityFilters from "./visibilityFiltersReducer";
+import arrowsState from './sortStateReducer'
 
 export default combineReducers({
     initialState,
-    visibilityFilter,
+    visibilityFilters,
+    arrowsState,
 });

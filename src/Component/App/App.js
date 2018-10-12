@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TitleSelectSort from "../TitleSelectSort";
+import TitleSelectFilter from "../TitleSelectFilter";
 import HeaderTable from "../HeaderTable";
 import ContentTable from "../ContentTable";
 
 
+
+
 const App = ({
                  initialState,
-                 setSelectedSort,
+                 setFilter,
+                 arrowsState,
                  setArrows,
                  getNewTable,
                  visibleSortState,
@@ -15,34 +18,34 @@ const App = ({
     <div>
         <div className="panel-title">Tables Redux</div>
         <div className="panel_heading">
-            <TitleSelectSort
+            <TitleSelectFilter
                 name="Gender"
                 list={initialState.gender}
-                setSelectedSortActive={setSelectedSort}
+                setSelectedFilter={setFilter}
             />
-            <TitleSelectSort
+            <TitleSelectFilter
                 name="Hair Color"
                 list={initialState.hairСolor}
-                setSelectedSortActive={setSelectedSort}
+                setSelectedFilter={setFilter}
             />
-            <TitleSelectSort
+            <TitleSelectFilter
                 name="Mass"
                 list={initialState.mass}
-                setSelectedSortActive={setSelectedSort}
+                setSelectedFilter={setFilter}
             />
         </div>
         <div className="table1_wrapper">
             <table className="table1">
                 <HeaderTable
-                    onclickSetArrows={setArrows}
-                    arrowName={initialState.arrowName}
-                    arrowHeight={initialState.arrowHeight}
-                    arrowMass={initialState.arrowMass}
-                    arrowBirthYear={initialState.arrowBirthYear}
+                    setArrowsOnclick={setArrows}
+                    arrowName={arrowsState.arrowName}
+                    arrowHeight={arrowsState.arrowHeight}
+                    arrowMass={arrowsState.arrowMass}
+                    arrowBirthYear={arrowsState.arrowBirthYear}
                 />
                 <ContentTable
                     results={visibleSortState}
-                    onClickclGetNewTable={getNewTable}
+                    GetNewTableOnclick={getNewTable}
                 />
             </table>
         </div>

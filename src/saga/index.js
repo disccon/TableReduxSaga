@@ -1,26 +1,26 @@
 import {takeLatest, all} from 'redux-saga/effects';
 import {getData, getDataTable} from "../api";
-import {makeSagaRequest, ArrowSagaRequest, SelectedSagaRequest, NewTableSagaRequest} from "../helpers/makeSagaRequest";
+import {makeSagaRequest, ArrowSaga, SetFilterSaga, NewTableSagaRequest} from "../helpers/makeSagaRequest";
 
 
 function* loading() {
-    yield takeLatest('LOADING',makeSagaRequest(getData)) //можно слушать не только action а масив из action
+    yield takeLatest('LOADING',makeSagaRequest(getData))
 }
-export function* choose() {
-    yield takeLatest('CHOOSE',SelectedSagaRequest()) //можно слушать не только action а масив из action
+export function* chooseFilter() {
+    yield takeLatest('FILTER',SetFilterSaga())
 }
 export function* arrows() {
-    yield takeLatest('ARROW',ArrowSagaRequest()) //можно слушать не только action а масив из action
+    yield takeLatest('ARROW',ArrowSaga())
 }
 
 export function* newTable() {
-    yield takeLatest('NEWTABLE',NewTableSagaRequest(getDataTable)) //можно слушать не только action а масив из action
+    yield takeLatest('NEWTABLE',NewTableSagaRequest(getDataTable))
 }
 
 export default function* () {
     yield all([
         loading(),
-        choose(),
+        chooseFilter(),
         arrows(),
         newTable(),
     ])

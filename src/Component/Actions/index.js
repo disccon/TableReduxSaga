@@ -3,8 +3,8 @@ export function getRepos(dataName) {
     return{ payload:dataName,type: 'LOADING'};
 }
 
-export function setSelectedSort(selectName,eventTarget){
-    return{ payload:selectName, target:eventTarget, type: 'CHOOSE'};
+export function setFilter(groupFilter,eventTarget){
+    return{ sectorFilter:groupFilter, filter:eventTarget, type: 'FILTER'};
 }
 
 export function setArrows(arrowId,arrowClass){

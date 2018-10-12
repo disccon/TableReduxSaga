@@ -25,25 +25,25 @@ export function makeSagaRequest(getData) {
 }
 
 
-export function SelectedSagaRequest() {
+export function SetFilterSaga() {
     return function* (action) {
         try {
-            if (action.payload === "Gender") {
+            if (action.sectorFilter === "Gender") {
                 yield put({
                     type: `${action.type}_GENDER_SUCCESS`,
-                    target: action.target,
+                    filter: action.filter,
                 })
             }
-            else if (action.payload === "Hair Color") {
+            else if (action.sectorFilter === "Hair Color") {
                 yield put({
                     type: `${action.type}_HAIRCOLOR_SUCCESS`,
-                    target: action.target,
+                    filter: action.filter,
                 })
             }
-            else if  (action.payload === "Mass") {
+            else if  (action.sectorFilter === "Mass") {
                 yield put({
                     type: `${action.type}_MASS_SUCCESS`,
-                    target: action.target,
+                    filter: action.filter,
                 })
             }
         } catch (error) {
@@ -56,7 +56,7 @@ export function SelectedSagaRequest() {
     };
 }
 
-export function ArrowSagaRequest() {
+export function ArrowSaga() {
     return function* (action) {
         try {
                 if(action.arrowClass === "fa fa-arrows-v" || action.arrowClass === "fa fa-arrow-up" ){

@@ -8,7 +8,7 @@ const  NewTable = ({ homeworldData ,speciesData, vehiclesData}) =>(
         <td colSpan="11" className="new_table">
             <div>
                 {homeworldData && <h3>Homeworld</h3>}
-                {homeworldData&& <table className="new_table2">
+                {homeworldData && <table className="new_table2">
                     <tbody>
                     <tr>
                         <Table list={['name',homeworldData.name,'climate',homeworldData.climate]}/>

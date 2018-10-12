@@ -6,7 +6,7 @@ import HeaderTable from './HeaderTable';
 export default compose(
     withHandlers({
         onclickArrows: props => (arrowId,classArrow) => {
-            props.onclickSetArrows(arrowId,classArrow)
+            props.setArrowsOnclick(arrowId,classArrow)
         },
     }),
 
