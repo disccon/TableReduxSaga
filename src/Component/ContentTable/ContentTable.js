@@ -39,12 +39,11 @@ const  ContentTable = ({ results,getNewTable}) =>(
 ContentTable.propTypes = {
     results: PropTypes.array,
     getNewTable: PropTypes.func,
-    isOpen: PropTypes.bool,
+
 };
 
 ContentTable.defaultProps = {
     results:[],
-    isOpen:false,
 };
 
 

@@ -47,7 +47,7 @@ const visibleFilter = (initialState,visibilityFilters, arrowState,sortStateArrow
         }
         return sortStateArrows(resultsVisible,arrowState)
     }
-    return []
+    return [];
 }
 
 export default visibleFilter;

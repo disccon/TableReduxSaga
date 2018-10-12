@@ -53,14 +53,16 @@ const App = ({
 )
 App.propTypes = {
     initialState: PropTypes.object,
-    setSelected: PropTypes.func,
+    setFilter: PropTypes.func,
+    arrowsState: PropTypes.object,
     setArrows: PropTypes.func,
     getNewTable: PropTypes.func,
-    visibleSortState: PropTypes.any,
+    visibleSortState: PropTypes.array,
 };
 
 App.defaultProps = {
     initialState: {},
+    arrowsState: {},
     visibleSortState: [],
 };
 export default App;

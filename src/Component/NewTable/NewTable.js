@@ -49,12 +49,7 @@ const  NewTable = ({ homeworldData ,speciesData, vehiclesData}) =>(
     </tr>
 )
 
-NewTable.propTypes = {
-    homeworldData: PropTypes.object,
-    speciesData: PropTypes.object,
-    vehiclesData: PropTypes.object,
 
-};
 
 NewTable.defaultProps = {
     homeworldData: {},
