@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 
 
 
-const  TitleSelect = ({ name,list,chooseOption}) =>(
+const  TitleSelectSort = ({ name,list,setSortActive}) =>(
     <label> {name}
-        <select size="1" onChange={chooseOption}>
+        <select size="1" onChange={setSortActive}>
             {list.map((results) => {
                 return <option value={results} key={results}>{results}</option>
            })
@@ -15,18 +15,18 @@ const  TitleSelect = ({ name,list,chooseOption}) =>(
         </select>
     </label>
 )
-TitleSelect.propTypes = {
+TitleSelectSort.propTypes = {
     name: PropTypes.string,
     list: PropTypes.array,
     chooseOption: PropTypes.func,
 
 };
 
-TitleSelect.defaultProps = {
+TitleSelectSort.defaultProps = {
     name:'',
     list:[],
 
 };
 
 
-export default TitleSelect;
+export default TitleSelectSort;

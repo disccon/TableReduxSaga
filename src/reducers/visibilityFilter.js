@@ -1,11 +1,11 @@
-// const visibilityFilter = (state = state, action) => {
-//     console.log(state,action)
-//     switch (action.type) {
-//         case 'SET_VISIBILITY_FILTER':
-//             return action.filter
-//         default:
-//             return action
-//     }
-// }
-//
-// export default visibilityFilter;
+const visibilityFilter = (state = state, action) => {
+    //console.log('22222',state,action)
+    switch (action.filter) {
+        case 'ARROW_NAME_SUCCESS':
+            return action.filter
+        default:
+            return action
+    }
+}
+
+export default visibilityFilter;

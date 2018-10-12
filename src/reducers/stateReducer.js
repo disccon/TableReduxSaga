@@ -33,7 +33,7 @@ export default function stateReducer(state = initialState,action) {
         case 'CHOOSE_GENDER_SUCCESS' : {
             return {
                 ...state,
-                genderValue: action.target,
+                genderVisible: action.target,
                 error: undefined,
                 status: 'choose success',
             }
@@ -41,7 +41,7 @@ export default function stateReducer(state = initialState,action) {
         case 'CHOOSE_HAIRCOLOR_SUCCESS' : {
             return {
                 ...state,
-                hairColorValue: action.target,
+                hairColorVisible: action.target,
                 error: undefined,
                 status: 'choose success',
             }
@@ -49,7 +49,7 @@ export default function stateReducer(state = initialState,action) {
         case 'CHOOSE_MASS_SUCCESS' : {
             return {
                 ...state,
-                massValue: action.target,
+                massVisible: action.target,
                 error: undefined,
                 status: 'choose success',
             }
@@ -145,29 +145,6 @@ export default function stateReducer(state = initialState,action) {
     }
 }
 
-
-export function getRepos(dataName) {
-    return{ payload:dataName,type: 'LOADING'};
-}
-
-export function setSelected(selectName,eventTarget){
-    return{ payload:selectName, target:eventTarget, type: 'CHOOSE'};
-}
-
-export function setArrows(arrowId,arrowClass){
-    return{ arrowId:arrowId, type: 'ARROW',arrowClass: arrowClass};
-}
-
-export function getNewTable( isOpen,results,index,homeworld,species,vehicles){
-    return{
-        payload:isOpen,
-        results,
-        homeworld,
-        species,
-        vehicles,
-        index,
-        type: 'NEWTABLE'};
-}
 
 
 
